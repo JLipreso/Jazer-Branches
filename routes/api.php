@@ -8,9 +8,7 @@ use Jazer\Users\Http\Controllers\Delete\Delete;
 
 Route::group(['prefix' => 'api'], function () {
     Route::group(['prefix' => 'branches'], function () {
-        Route::get('ok', function () {
-            echo "Connected";
-        });
+        Route::get('single/{branch_refid}', [Single::class, 'single']);
     });
 });
 

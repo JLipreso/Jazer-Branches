@@ -8,14 +8,14 @@ use Illuminate\Support\Facades\DB;
 
 class Single extends Controller
 {
-    public static function single($people_refid) {
-        $source = DB::connection("conn_users")
-        ->table("people")
-        ->select("project_refid", "people_group_refid", "people_refid", "firstname", "lastname", "email", "blocked", "active")
+    public static function single($branch_refid) {
+        $source = DB::connection("conn_branches")
+        ->table("branch")
         ->where([
             "project_refid"     => env('project_refid'),
-            "people_refid"      => $people_refid
+            "branch_refid"      => $branch_refid
         ])
+        ->orderBy("name", "asc")
         ->get();
 
         if(count($source) > 0) {
