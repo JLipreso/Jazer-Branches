@@ -16,7 +16,7 @@ class Flexible extends Controller
         $score              = 0;
 
         for($i = 0; $i < $counts; $i++) {
-            $source = DB::connection("conn_branches")->table("branch")
+            $updated = DB::connection("conn_branches")->table("branch")
             ->where([
                 "project_refid"     => config('branchesconfig.project_refid'),
                 "branch_refid"      => $request['branch_refid']
