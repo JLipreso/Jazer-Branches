@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Jazer\Users\Http\Controllers\Utility;
+namespace Jazer\Branches\Http\Controllers\Utility;
 
 use App\Http\Controllers\Controller;
 
 /**
- * \Jazer\Users\Http\Controllers\Utility\Token::create('AUT');
+ * \Jazer\Branches\Http\Controllers\Utility\Token::create('AUT');
  */
 
 class Token extends Controller

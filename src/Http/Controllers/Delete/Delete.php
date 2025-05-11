@@ -11,7 +11,7 @@ class Delete extends Controller
     public static function delete($branch) {
         $deleted = DB::connection("conn_branches")->table("branch")
             ->where([
-                "project_refid"     => env('project_refid'),
+                "project_refid"     => config('branchesconfig.project_refid'),
                 "branch_refid"      => $branch
             ])
             ->delete();

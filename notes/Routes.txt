@@ -6,4 +6,5 @@ branches/single/{branch_refid}
 branches/paginate?page=1&where={JSON}
 branches/delete/{branch_refid}
 branches/updateflexible?branch_refid={branch_refid}&columns=[]
+branches/createbranch?name=STR&address=STR&cover=STR&geo_lat=STR&geo_lng=STR&created_by=STR
 
