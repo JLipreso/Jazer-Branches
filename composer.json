@@ -1,6 +1,6 @@
 {
     "name": "jazer/branches",
-    "description": "Jazer package to handle user API request",
+    "description": "Jazer package to handle branches API request",
     "type": "package",
     "license": "MIT",
     "autoload": {
