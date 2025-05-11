@@ -1,9 +1,7 @@
 Installation:
-composer require jazer/users@dev-main
+composer require jazer/branches:dev-main
+php artisan vendor:publish --tag=branchesconfig-config
 
-users/signinEmailPass?people_group_refid={STR}&email={STR}&password={STR}
-users/signout/{token}
-users/paginate?page=1&where={JSON}
-users/single/{people_refid}
-users/delete/{people_refid}
+branches/single/{branch_refid}
+branches/paginate?page=1&where={JSON}
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jazer\Users\Http\Controllers\Fetch;
+namespace Jazer\Branches\Http\Controllers\Fetch;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -11,25 +11,25 @@ class Paginate extends Controller
     public static function paginate(Request $request) {
 
         if((isset($request['where'])) && ($request['where'] !== null )) {
-            return DB::connection("conn_users")
-            ->table("people")
-            ->select("project_refid", "people_group_refid", "people_refid", "firstname", "lastname", "email", "blocked", "active")
+            return DB::connection("conn_branches")
+            ->table("branch")
+            ->select("project_refid", "branch_refid", "name", "address", "cover", "description", "geolocation", "public", "active", "created_at", "created_by")
             ->where([
-                "project_refid"     => env('project_refid')
+                "project_refid"     => config('branchesconfig.project_refid')
             ])
             ->where(json_decode($request['where']))
-            ->orderBy("lastname", "ASC")
-            ->paginate(config('usersconfig.fetch_paginate_max'));
+            ->orderBy("name", "ASC")
+            ->paginate(config('branchesconfig.fetch_paginate_max'));
         }
         else {
-            return DB::connection("conn_users")
-            ->table("people")
-            ->select("project_refid", "people_group_refid", "people_refid", "firstname", "lastname", "email", "blocked", "active")
+            return DB::connection("conn_branches")
+            ->table("branch")
+            ->select("project_refid", "branch_refid", "name", "address", "cover", "description", "geolocation", "public", "active", "created_at", "created_by")
             ->where([
-                "project_refid"     => env('project_refid')
+                "project_refid"     => config('branchesconfig.project_refid')
             ])
-            ->orderBy("lastname", "ASC")
-            ->paginate(config('usersconfig.fetch_paginate_max'));
+            ->orderBy("name", "ASC")
+            ->paginate(config('branchesconfig.fetch_paginate_max'));
         }
     }
 }

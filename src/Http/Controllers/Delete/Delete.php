@@ -1,6 +1,6 @@
 <?php
 
-namespace Jazer\Users\Http\Controllers\Delete;
+namespace Jazer\Branches\Http\Controllers\Delete;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
