@@ -24,7 +24,7 @@ class Paginate extends Controller
         else {
             return DB::connection("conn_branches")
             ->table("branch")
-            ->select("project_refid", "branch_refid", "name", "address", "cover", "description", "geolocation", "public", "active", "created_at", "created_by")
+            ->select("project_refid", "branch_refid", "name", "address", "cover", "description", "geo_lat", "geo_lng", "public", "active", "created_at", "created_by")
             ->where([
                 "project_refid"     => config('branchesconfig.project_refid')
             ])

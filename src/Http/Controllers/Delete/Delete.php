@@ -8,21 +8,15 @@ use Illuminate\Support\Facades\DB;
 
 class Delete extends Controller
 {
-    public static function delete($people_refid) {
-        $deleted = DB::connection("conn_users")->table("people")
+    public static function delete($branch) {
+        $deleted = DB::connection("conn_branches")->table("branch")
             ->where([
                 "project_refid"     => env('project_refid'),
-                "people_refid"      => $people_refid
+                "branch_refid"      => $branch
             ])
             ->delete();
 
         if($deleted) {
-            DB::connection("conn_users")->table("people_auth")
-            ->where([
-                "project_refid"     => env('project_refid'),
-                "people_refid"      => $people_refid
-            ])
-            ->delete();
             return [
                 "success"   => true
             ];

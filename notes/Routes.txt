@@ -4,4 +4,5 @@ php artisan vendor:publish --tag=branchesconfig-config
 
 branches/single/{branch_refid}
 branches/paginate?page=1&where={JSON}
+branches/delete/{branch_refid}
 
