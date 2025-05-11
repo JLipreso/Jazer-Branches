@@ -9,25 +9,25 @@ use Illuminate\Support\Facades\DB;
 class CreateBranch extends Controller
 {
     public static function create(Request $request) {
-        if($request['name']) {
+        if($request['name'] == '') {
             return [
                 "success"   => false,
                 "message"   => "Name is required"
             ];
         }
-        else if($request['address']) {
+        else if($request['address'] == '') {
             return [
                 "success"   => false,
                 "message"   => "Address is required"
             ];
         }
-        else if($request['geo_lat']) {
+        else if($request['geo_lat'] == '') {
             return [
                 "success"   => false,
                 "message"   => "Geolocation's latitude is required"
             ];
         }
-        else if($request['geo_lng']) {
+        else if($request['geo_lng'] == '') {
             return [
                 "success"   => false,
                 "message"   => "Geolocation's longitude is required"
