@@ -16,7 +16,7 @@ class BranchesServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../../../config/config.php' => config_path('jazerbranchesconfig.php')
+            __DIR__ . '/../../../config/config.php' => config_path('jtbranchesconfig.php')
         ], 'jazerbranchesconfig-config');
         
         $this->loadRoutesFrom( __DIR__ . '/../../../routes/api.php');

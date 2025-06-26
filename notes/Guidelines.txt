@@ -1,6 +1,6 @@
 Installation:
 composer require jazer/branches:dev-main
-php artisan vendor:publish --tag=jazerbranchesconfig-config
+php artisan vendor:publish --tag=jtbranchesconfig-config
 
 branches/single/{branch_refid}
 branches/paginate?page=1&where={JSON}
