@@ -9,7 +9,7 @@ class BranchesServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../../../config/database.php', 'branches'  
+            __DIR__ . '/../../../config/database.php', 'jtbranchesconfig'  
         );
     }
 
